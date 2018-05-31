@@ -73,7 +73,26 @@ class Personals extends Component {
           href: `https://ticket.yonyoucloud.com/ticket/menu/router/myticket/KJ`,
           name: '用友云官网',
         },
-      ]
+      ],
+      language: {
+        show: true,
+        defaultValue: 'zh',
+        onChangeLanguage: (value) => {console.log(value)},
+        languageList: [
+          {
+            value: 'zh',
+            context: '简体中文'
+          },
+          {
+            value: 'en',
+            context: 'English'
+          },
+          {
+            value: 'eh',
+            context: '繁体中文'
+          },
+        ]
+      }
     };
   }
 
@@ -113,7 +132,7 @@ class Personals extends Component {
   }
 
   render() {
-    const { hrefs, TeamData, userInfo } = this.state;
+    const { hrefs, TeamData, userInfo, language } = this.state;
     const titleType = '企业';
     const requestDisplay = false;
     const exitModal = false;
@@ -129,6 +148,7 @@ class Personals extends Component {
           titleType={titleType}
           hrefs={hrefs}
           logout={this.logout}
+          language={language}
         />
       </div>
     );

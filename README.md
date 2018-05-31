@@ -208,3 +208,32 @@ import { Search, Personal, QuickApplicatoin } from 'diwork-business-components';
 #### logout  func  注销 
 
 ####  editType  bool  非必传  默认 true  是否显示首页编辑按钮  
+
+#### language  .object  非必传参数  语言切换
+	如果需要显示语言切换组件  需要传递下边四个参数
+	show  :  true或者false   传递true显示
+	defaultValue :  默认展示的value
+	onChangeLanguage: 点击切换按钮后执行的操作方法  默认自带value参数
+	languageList:  数组类型， 语言列表 
+	
+		language: {
+      show: false,	
+      defaultValue: 'zh',
+      onChangeLanguage: (value) => {
+				console.log(value);
+			},
+      languageList: [
+        {
+          value: 'zh',
+          context: '简体中文'
+        },
+        {
+          value: 'en',
+          context: 'English'
+        },
+        {
+          value: 'eh',
+          context: '繁体中文'
+        },
+      ]
+    }	
