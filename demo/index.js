@@ -10,10 +10,10 @@ class Demo extends Component {
   render() {
     return (
       <div>
-        <div className="wrap">
+        <div className="wrap1">
         <Quick />
         </div>
-        <div className="wrap">
+        <div className="wrap2">
           <Personals />
         </div>
       </div>

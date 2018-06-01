@@ -67,7 +67,7 @@ class Personal extends Component {
             onKeyDown={this.handerClick}
             role="presentation"
           />
-          : <Icon type="staff" className={personalImg} onClick={this.handerClick} />
+          : <Icon type="staff" className={`${personalImg} gnoreclass`} onClick={this.handerClick} />
         }
         <TransitionGroup>
           <CSSTransitionGroup
