@@ -9,14 +9,13 @@
 
 .wrap__style___hJ5Wk {
   position: fixed;
-  left: 0px;
   top: 47px;
   width: 430px;
   height: 100%;
   background: #fff;
   padding:0 30px;
   border-radius:2px 2px 0 0 ;
-  box-shadow: 4px 0 4px rgba(0,0,0,.14);
+  box-shadow: 0px 0px 10px 4px rgba(0,0,0,.14);
   z-index: 999;
   padding-top: 1px;
   text-align: left;

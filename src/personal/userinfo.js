@@ -152,6 +152,7 @@ class Userinfo extends Component {
       titleType,
       dispatch,
       language,
+      animatedType
     } = this.props;
 
     // 允许用户退出空间， 0:禁止;1:允许
@@ -170,8 +171,12 @@ class Userinfo extends Component {
     }
 
     const _class = allowTenants.length <= 0 ? hiden : show;
+    let positionType = { left: 0 }
+    if(animatedType == "Right"){
+      positionType = { right: 0 }
+    }
     return (
-      <div id="modalId" className={`${wrap} ${clearfix}`} >
+      <div id="modalId" className={`${wrap} ${clearfix}`} style={positionType}>
         <div>
           <div className={logOut} onClick={logout}>
             <Icon type="exit" />

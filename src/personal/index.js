@@ -14,9 +14,11 @@ class Personal extends Component {
     userInfo: PropTypes.shape({
       userAvator: PropTypes.string,
     }),
+    animatedType: PropTypes.string,
   };
   static defaultProps = {
     userInfo: {},
+    animatedType: "Left"
   };
   constructor(props) {
     super(props);
@@ -53,7 +55,8 @@ class Personal extends Component {
       userInfo: {
         userAvator,
       },
-      requestDisplay
+      requestDisplay,
+      animatedType
     } = this.props;
     return (
       <div style={{ width: '100%', height: '100%' }}>
@@ -73,9 +76,9 @@ class Personal extends Component {
           <CSSTransitionGroup
             transitionName={{
               enter: 'animated',
-              enterActive: 'fadeInLeft',
+              enterActive: `fadeIn${animatedType}`,
               leave: 'animated',
-              leaveActive: 'fadeOutLeft',
+              leaveActive: `fadeOut${animatedType}`,
             }}
             transitionEnterTimeout={300}
             transitionLeaveTimeout={300}
@@ -87,6 +90,7 @@ class Personal extends Component {
                 userInfoDisplay={userInfoDisplay}
                 closePersonalModal={this.closePersonalModal}
                 outsideClickIgnoreClass={`gnoreclass`}
+                animatedType={this.props.animatedType}
                 {...this.props}
               />
               : null

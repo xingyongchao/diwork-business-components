@@ -93,7 +93,8 @@ class Personals extends Component {
             context: '繁体中文'
           },
         ]
-      }
+      },
+      animatedType: "Right",
     };
   }
 
@@ -133,12 +134,12 @@ class Personals extends Component {
   }
 
   render() {
-    const { hrefs, TeamData, userInfo, language } = this.state;
+    const { hrefs, TeamData, userInfo, language, animatedType } = this.state;
     const titleType = '企业';
     const requestDisplay = false;
     const exitModal = false;
     return (
-      <div>
+      <div className="wrap1">
         <Personal
           userInfo={userInfo}
           requestDisplay={requestDisplay}

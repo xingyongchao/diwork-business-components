@@ -185,6 +185,7 @@ import { Search, Personal, QuickApplicatoin } from 'diwork-business-components';
 		openManage: '/manage',
 		openUserinfo: '/userinfo',
 		openInvitation: '/invitation',
+		openDynamic: '/dynamic',
 	},
 
 ####titleType string  企业或者团队
@@ -237,3 +238,5 @@ import { Search, Personal, QuickApplicatoin } from 'diwork-business-components';
         },
       ]
     }	
+
+	animatedType :   非必传参数， 决定动画方向和位置 （ Left || Right ）  默认为"Left" 
