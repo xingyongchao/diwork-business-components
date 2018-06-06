@@ -12,9 +12,7 @@ commonConfig = {
   },
   output: {
     path: path.join(__dirname, './build'),
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js',
-    publicPath: "/"
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -42,7 +40,7 @@ commonConfig = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: 'font/[name]-[hash:8].[ext]'
+          name: 'font/[name].[ext]'
         }
       }
     ]

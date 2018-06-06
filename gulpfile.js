@@ -41,7 +41,7 @@ var babelPlugins = [
     "css-modules-transform",
     {
       generateScopedName: '[local]__[name]___[hash:base64:5]',
-      ignore: "./node_modules/",
+      ignore: "./node_modules/**/*.css",
       extractCss: {
         dir: "./dist/",
         relativeRoot: "./src/",
@@ -50,12 +50,6 @@ var babelPlugins = [
       keepImport: true
     },
   ],
-  [
-    "module-alias",
-    makeAlias({
-      
-    })
-  ]
 ];
 
 gulp.task("clean", function (cb) {
@@ -83,7 +77,6 @@ gulp.task("css",["clean"],function(){
   .pipe(gulp.dest("dist"))
 })
 gulp.task("build", ["clean", "fonts","css"], function () {
-  debugger;
   return gulp
     .src([
       path.join(process.cwd(), "./src/**/*.js"),

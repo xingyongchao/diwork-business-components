@@ -34,7 +34,7 @@ const publicConfig = {
     }),
     // 单独生成css文件。
     new ExtractTextPlugin({
-      filename: '[name].[contenthash:5].css',
+      filename: '[name].css',
       allChunks: true
     })
   ]

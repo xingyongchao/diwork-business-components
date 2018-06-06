@@ -59,6 +59,7 @@ class Personals extends Component {
         openManage: '/manage',
         openUserinfo: '/userinfo',
         openInvitation: '/invitation',
+        openDynamic: '/dynamic',
       },
       hrefs: [
         {
@@ -124,7 +125,7 @@ class Personals extends Component {
   }
 
   openNewRouter = (path) => {
-
+    console.log(path)
   }
 
   logout = () => {

@@ -10,6 +10,7 @@ import {
   defaultPic, logOut, tenantArea, tenantPortrait, tenantName,
   tenantDescribe, companyType, teamBtnList, userSetting, userInfoPane,
   popconfirm, popconfirm_content, new_name, hiden, show, linkSetting, enter_setting,
+  gloryIcon, iconContainer, icon3,
 } from './style.css';
 
 @onClickOutside
@@ -55,11 +56,11 @@ class Userinfo extends Component {
     // 是否打开了退出团队和企业的弹窗
     exitModal: false,
     // 关闭弹窗方法   组件内部调用
-    closePersonalModal: () => {},
+    closePersonalModal: () => { },
     // 路由跳转的方法 
-    dispatch: () => {},
+    dispatch: () => { },
     // 退出登录
-    logout: () => {},
+    logout: () => { },
     // 是团队还是企业的判断条件
     titleType: '团队',
     // 个人中心数据源
@@ -67,14 +68,14 @@ class Userinfo extends Component {
     // 左下角外链的集合
     hrefs: [],
     // 打开退出团队或者企业弹窗
-    openExitModal: () => {},
+    openExitModal: () => { },
     // 关闭显示创建团队成功弹窗
-    closeRequestDisplay: () => {},
+    closeRequestDisplay: () => { },
     // 多语的数据集合
     language: {
       show: false,
       defaultValue: 'zh',
-      onChangeLanguage: () => {},
+      onChangeLanguage: () => { },
       languageList: [
         {
           value: 'zh',
@@ -158,7 +159,7 @@ class Userinfo extends Component {
 
     let _invitePermission = false;
     let _allowExit = "1";
-    if (currentTeamConfig){
+    if (currentTeamConfig) {
       const { allowExit, invitePermission } = currentTeamConfig;
       if (invitePermission && invitePermission === '0') {
         _invitePermission = admin;
@@ -167,7 +168,7 @@ class Userinfo extends Component {
       }
       _allowExit = allowExit;
     }
-    
+
     const _class = allowTenants.length <= 0 ? hiden : show;
     return (
       <div id="modalId" className={`${wrap} ${clearfix}`} >
@@ -177,21 +178,30 @@ class Userinfo extends Component {
             <span>注销</span>
           </div>
           {
-            language && language.show ? <Language 
+            language && language.show ? <Language
               defaultValue={language.defaultValue}
               onChangeLanguage={language.onChangeLanguage}
               languageList={language.languageList}
             /> : null
           }
-          
+
           <div className={userInfoPane}>
             <div className={imgUser}>
               <div className={imgOuter}>
                 {this.getIcon(userAvator)}
               </div>
+            </div>
+            <div>
               <div className={new_name} title={userName}>{userName}</div>
-              <div className={userSetting} onClick={ () => {dispatch('openAccount'); }}>
+              <div className={userSetting} onClick={() => { dispatch('openAccount'); }}>
                 <Icon type="copyreader" />
+              </div>
+              <div>
+                <ul className={`${gloryIcon} ${clearfix}`}>
+                  <li onClick={() => { dispatch('openDynamic'); }}>
+                    <div className={`${iconContainer} ${icon3}`}><Icon title="动态" type="Internet2"></Icon></div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -219,7 +229,7 @@ class Userinfo extends Component {
                       <Icon type="record" />首页编辑
                     </Button>
                   </li>
-                : null
+                  : null
               }
               {
                 titleType == '企业' ?
@@ -228,7 +238,7 @@ class Userinfo extends Component {
                       <Icon type="role-management" />员工信息
                     </Button>
                   </li>
-                : null
+                  : null
               }
               {
                 _invitePermission ?
@@ -237,15 +247,15 @@ class Userinfo extends Component {
                       <Icon type="add-friends" />邀请成员
                     </Button>
                   </li>
-                : null
+                  : null
               }
               {
                 admin || _allowExit === '0' ? null :
-                <li>
-                  <Button shape="border" onClick={this.props.openExitModal} >
-                    <Icon type="staff" />{`退出${titleType}`}
-                  </Button>
-                </li>
+                  <li>
+                    <Button shape="border" onClick={this.props.openExitModal} >
+                      <Icon type="staff" />{`退出${titleType}`}
+                    </Button>
+                  </li>
               }
             </ul>
             {
@@ -258,7 +268,7 @@ class Userinfo extends Component {
                   </div>
                   <div onClick={this.props.closeRequestDisplay}>我知道了</div>
                 </div>
-              : null
+                : null
             }
           </div>
 

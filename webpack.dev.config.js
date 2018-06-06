@@ -3,9 +3,6 @@ const path = require('path');
 const webpack = require('webpack');
 const commonConfig = require('./webpack.common.config.js');
 
-var target = "http://ir6fs8gj.c87e2267-1001-4c70-bb2a-ab41f3b81aa3.app.yyuap.com";
-var target = "https://mock.yonyoucloud.com/mock/268";
-
 const devConfig = {
     devtool: 'inline-source-map',// devtool优化
     entry: {
@@ -15,8 +12,7 @@ const devConfig = {
         ]
     },
     output: {
-        /*这里本来应该是[chunkhash]的，但是由于[chunkhash]和react-hot-loader不兼容。只能妥协*/
-        filename: '[name].[hash].js'
+        filename: '[name].js'
     },
     module: {
         rules: [
@@ -31,7 +27,17 @@ const devConfig = {
                 path.join(__dirname, './demo'),
                 path.join(__dirname, './node_modules'),
             ],
-            use: ["style-loader","css-loader"]
+            use: [
+                "style-loader",
+                {
+                    loader: 'css-loader',
+                    options: {
+                      modules: false,
+                      importLoaders: 1,
+                      sourceMap: false
+                    }
+                },
+            ]
           }
         ]
     },
@@ -44,17 +50,10 @@ const devConfig = {
         })
     ],
     devServer: {
-        port: 8080,
+        port: 2222,
         contentBase: path.join(__dirname, './build'),
         historyApiFallback: true,
         host: '0.0.0.0',
-        proxy: {
-            "/api": {
-                target,
-                pathRewrite: { "^/api": "" },
-                changeOrigin: true
-            }
-        }
     }
 };
 
