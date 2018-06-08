@@ -127,12 +127,9 @@ class SearchItemWrap extends Component {
     } = this.props;
     if (url) {
       getData({ url, type, dispatch, trigger }).then(() => {
-        setTimeout(()=>{
-          this.setState({
-            loaded: true,
-          });
-        },1000000)
-        
+        this.setState({
+          loaded: true,
+        });
       });
     } else {
       this.setState({

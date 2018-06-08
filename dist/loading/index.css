@@ -1,0 +1,41 @@
+/*  imported from index.css  */
+
+.wrap__index___xJ5p0{
+  width: 150px;
+  height: 15px;
+  margin: 10px auto;
+  text-align: center;
+}
+.wrap__index___xJ5p0 span{
+  display: inline-block;
+  width: 15px;
+  height: 100%;
+  margin-right: 5px;
+  -webkit-animation: load__index___9uPQC 1.04s ease infinite;
+}
+.wrap__index___xJ5p0 span:last-child{
+  margin-right: 0px; 
+}
+@-webkit-keyframes load__index___9uPQC{
+  0%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+  }
+}
+.wrap__index___xJ5p0 span:nth-child(1){
+  -webkit-animation-delay:0.13s;
+}
+.wrap__index___xJ5p0 span:nth-child(2){
+  -webkit-animation-delay:0.26s;
+}
+.wrap__index___xJ5p0 span:nth-child(3){
+  -webkit-animation-delay:0.39s;
+}
+.wrap__index___xJ5p0 span:nth-child(4){
+  -webkit-animation-delay:0.52s;
+}
+.wrap__index___xJ5p0 span:nth-child(5){
+  -webkit-animation-delay:0.65s;
+}

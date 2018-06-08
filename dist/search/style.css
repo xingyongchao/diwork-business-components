@@ -19,6 +19,13 @@
   cursor: pointer;
   display: inline-block;
   margin-left:14px;
+  text-align: center;
+}
+.searchBtn__style___3ksJn i{
+  font-size: 20px;
+  font-weight: 700;
+  color: #878b94;
+  vertical-align: middle;
 }
 .searchBtn__style___3ksJn >i:hover {
   color:#2D3F5D;
@@ -39,10 +46,10 @@
   height: 100%;
   padding: 0 10px;
   font-size: 12px;
-  /* color: #333; */
   color: rgba(71,77,84,1);
   background: transparent;
   border:0 none;
+  outline: none;
 }
 .searchText__style___1Bzu7::-webkit-input-placeholder{color:#ccc!important}
 .searchText__style___1Bzu7::-moz-placeholder{color:#ccc!important}
