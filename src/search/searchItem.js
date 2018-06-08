@@ -127,10 +127,13 @@ class SearchItemWrap extends Component {
     } = this.props;
     if (url) {
       getData({ url, type, dispatch, trigger }).then(() => {
-        this.setState({
-          loaded: true,
-        });
-      }, e => console.log(e));
+        setTimeout(()=>{
+          this.setState({
+            loaded: true,
+          });
+        },1000000)
+        
+      });
     } else {
       this.setState({
         loaded: true,
@@ -138,6 +141,7 @@ class SearchItemWrap extends Component {
     }
   }
   render() {
+    const { loading } = this.props;
     if (this.state.loaded) {
       const Item = getSearchItemClass(this.props.type);
       let data = {};
@@ -148,7 +152,7 @@ class SearchItemWrap extends Component {
       }
       return <Item data={data} from={this.props.from} />;
     }
-    return <Loading container={this} show />;
+    return <Loading loading={loading}/>;
   }
 }
 

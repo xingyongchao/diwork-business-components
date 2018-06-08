@@ -151,6 +151,7 @@ class Personals extends Component {
           hrefs={hrefs}
           logout={this.logout}
           language={language}
+          animatedType={"Right"}
         />
       </div>
     );

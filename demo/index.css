@@ -1,8 +1,15 @@
-.wrap1{
+.c_wrap1{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.c_wrap2{
   position: absolute;
   left: 20px;
   top: 20px;
 }
-.wrap2{
-  
+.c_wrap3{
+  position: absolute;
+  top: 100px;
+  right: 300px;
 }

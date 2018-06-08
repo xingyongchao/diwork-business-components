@@ -7,7 +7,6 @@ const devConfig = {
     devtool: 'inline-source-map',// devtool优化
     entry: {
         app: [
-            'babel-polyfill',
             path.join(__dirname, 'demo/index.js')
         ]
     },

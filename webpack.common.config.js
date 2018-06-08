@@ -5,7 +5,6 @@ const webpack = require('webpack');
 commonConfig = {
   entry: {
     app: [
-      "babel-polyfill",
       path.join(__dirname, 'demo/index.js')
     ],
     vendor: ['react', 'react-router-dom', 'react-dom']

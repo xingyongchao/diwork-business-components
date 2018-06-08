@@ -74,27 +74,23 @@ class Search extends Component {
     }
   }
   handleClickOutside = (e) => {
-    setTimeout(() => {
-      if (!this.state.inWrap) {
-        const { isShow, isSearchWinShow } = this.state;
-        if (isShow) {
-          setTimeout(() => {
-            this.setState({
-              isShow: false,
-              text: '',
-            });
-          }, 500);
-        }
-        if (isSearchWinShow) {
-          this.setState({
-            isSearchWinShow: false,
-          });
-        }
+    if (!this.state.inWrap) {
+      const { isShow, isSearchWinShow } = this.state;
+      if (isShow) {
+        this.setState({
+          isShow: false,
+          text: '',
+        });
       }
-      this.setState({
-        inWrap: false,
-      });
-    }, 10);
+      if (isSearchWinShow) {
+        this.setState({
+          isSearchWinShow: false,
+        });
+      }
+    }
+    this.setState({
+      inWrap: false,
+    });
   }
   stopPropagation = () => {
     this.setState({
@@ -151,7 +147,15 @@ class Search extends Component {
                 content.map((item, j) => {
                   return (
                     <li key={`item${j}`}>
-                      <SearchItem dispatch={dispatch} trigger={trigger} data={item} type={type} url={renderUrl} from="quick" />
+                      <SearchItem 
+                        dispatch={dispatch} 
+                        trigger={trigger} 
+                        data={item} 
+                        type={type} 
+                        url={renderUrl} 
+                        from="quick" 
+                        {...this.props} 
+                      />
                     </li>
                   );
                 })
@@ -168,7 +172,7 @@ class Search extends Component {
             type="text"
             value={text}
             onChange={this.onChangeHandler}
-            placeholder="搜索人员信息、应用、服务及其他内容"
+            placeholder="搜索人员信息、服务及其他内容"
             autoFocus={true}
             onKeyDown={this.onKeyDown}
           />
@@ -202,7 +206,7 @@ class Search extends Component {
             </div>
           ) : null
         }
-        <div className={`tc ${searchBtn}`} onClick={this.search}>
+        <div className={searchBtn} onClick={this.search}>
           <Icon title="搜索" type="search" />
         </div>
       </div>
