@@ -37,12 +37,12 @@ class Search extends Component {
   }
   static defaultProps = {
     list: [],
-    onChange: () => {},
-    onEnter: () => {},
-    onSearch: () => {},
-    dispatch: () => {},
-    trigger: () => {},
-    onMoreBtnClick: () => {},
+    onChange: () => { },
+    onEnter: () => { },
+    onSearch: () => { },
+    dispatch: () => { },
+    trigger: () => { },
+    onMoreBtnClick: () => { },
   }
   constructor(props) {
     super(props);
@@ -115,15 +115,12 @@ class Search extends Component {
         isSearchWinShow: false,
       });
     } else {
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-        this.props.onChange(value);
-        if (!this.state.isSearchWinShow) {
-          this.setState({
-            isSearchWinShow: true,
-          });
-        }
-      }, 300);
+      this.props.onChange(value);
+      if (!this.state.isSearchWinShow) {
+        this.setState({
+          isSearchWinShow: true,
+        });
+      }
     }
     this.setState({
       text: value,
@@ -147,14 +144,14 @@ class Search extends Component {
                 content.map((item, j) => {
                   return (
                     <li key={`item${j}`}>
-                      <SearchItem 
-                        dispatch={dispatch} 
-                        trigger={trigger} 
-                        data={item} 
-                        type={type} 
-                        url={renderUrl} 
-                        from="quick" 
-                        {...this.props} 
+                      <SearchItem
+                        dispatch={dispatch}
+                        trigger={trigger}
+                        data={item}
+                        type={type}
+                        url={renderUrl}
+                        from="quick"
+                        {...this.props}
                       />
                     </li>
                   );
@@ -188,8 +185,8 @@ class Search extends Component {
             list.length ? (
               <div className={searchBtnAll} onClick={this.onMoreBtnClick}>更多结果</div>
             ) : (
-              <em>没有搜索结果</em>
-            )
+                <em>没有搜索结果</em>
+              )
           }
         </div>
       );

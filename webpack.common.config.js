@@ -18,12 +18,10 @@ commonConfig = {
       {
         test: /\.js$/,
         use: ['babel-loader?cacheDirectory=true'],
-        include: path.join(__dirname, 'src')
-      },
-      {
-        test: /\.js$/,
-        use: ['babel-loader?cacheDirectory=true'],
-        include: path.join(__dirname, 'demo')
+        include: [
+          path.join(__dirname, 'src'),
+          path.join(__dirname, 'demo'),
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/,
