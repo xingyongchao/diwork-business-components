@@ -17,6 +17,7 @@ import {
 class Userinfo extends Component {
   static propTypes = {
     editType: PropTypes.bool,
+    exitModalButton: PropTypes.bool,
     requestDisplay: PropTypes.bool,
     bgColor: PropTypes.string,
     userInfoDisplay: PropTypes.bool,
@@ -47,6 +48,8 @@ class Userinfo extends Component {
   static defaultProps = {
     // 是否显示首页编辑选项  默认为true
     editType: true,
+    // 是否显示退出团队/企业按钮  默认未true
+    exitModalButton: true,
     // 是否为创建成功团队或者企业显示的
     requestDisplay: false,
     // 团队或者企业的头像背景色
@@ -149,6 +152,7 @@ class Userinfo extends Component {
       hrefs,
       logout,
       editType,
+      exitModalButton,
       titleType,
       dispatch,
       language,
@@ -255,7 +259,7 @@ class Userinfo extends Component {
                   : null
               }
               {
-                admin || _allowExit === '0' ? null :
+                admin || _allowExit === '0' || !exitModalButton ? null :
                   <li>
                     <Button shape="border" onClick={this.props.openExitModal} >
                       <Icon type="staff" />{`退出${titleType}`}

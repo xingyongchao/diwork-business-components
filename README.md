@@ -210,6 +210,8 @@ import { Search, Personal, QuickApplicatoin } from 'diwork-business-components';
 
 ####  editType  bool  非必传  默认 true  是否显示首页编辑按钮  
 
+####  exitModalButton  bool  非必传  默认 true  是否显示退出团队/企业按钮  
+
 #### language  .object  非必传参数  语言切换
 	如果需要显示语言切换组件  需要传递下边四个参数
 	show  :  true或者false   传递true显示
@@ -239,4 +241,4 @@ import { Search, Personal, QuickApplicatoin } from 'diwork-business-components';
       ]
     }	
 
-	animatedType :   非必传参数， 决定动画方向和位置 （ Left || Right ）  默认为"Left" 
+#### animatedType :   非必传参数， 决定动画方向和位置 （ Left || Right ）  默认为"Left" 
