@@ -63,7 +63,7 @@ class Personal extends Component {
         {
           userAvator
           ? <img
-            alt={userAvator}
+            alt=""
             src={userAvator}
             className={`${personalImg} gnoreclass`}
             onClick={this.handerClick}
